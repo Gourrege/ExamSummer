@@ -6,9 +6,23 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ExamSummer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded"
+        Style="{StaticResource MaterialDesignWindow}">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="166,267,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_AddPatient" Content="Add" HorizontalAlignment="Left" Margin="671,87,0,0" VerticalAlignment="Top" MouseDown="btn_AddPatient_MouseDown"/>
+        <ListBox x:Name="lbx_ListofPatients" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="31,68,539,28"/>
+        <Label Content="Patients" HorizontalAlignment="Left" Margin="31,31,0,0" VerticalAlignment="Top" Width="161" Height="32" FontSize="22" FontWeight="Bold"/>
+        <Label Content="Patients Details" HorizontalAlignment="Center" Margin="0,31,0,0" VerticalAlignment="Top" Width="182" Height="32" FontSize="22" FontWeight="Bold"/>
+        <TextBox x:Name="tbx_FirstName" materialDesign:HintAssist.Hint="First Name"  HorizontalAlignment="Left" Margin="309,84,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_Surname" materialDesign:HintAssist.Hint="Last Name" HorizontalAlignment="Left" Margin="484,84,0,0" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbx_PhoneNumber" materialDesign:HintAssist.Hint="Phone Number" HorizontalAlignment="Left" Margin="309,128,0,0" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="datepick_DOB" HorizontalAlignment="Left" Margin="584,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date of Birth" HorizontalAlignment="Left" Margin="484,129,0,0" VerticalAlignment="Top"/>
+        <Label Content="Appointments" HorizontalAlignment="Center" VerticalAlignment="Center" Width="182" Height="32" FontSize="22" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="298,181,0,0" Stroke="Black" VerticalAlignment="Top" Width="492"/>
+        <ListBox x:Name="lbx_Appointments" HorizontalAlignment="Left" Height="168" Margin="309,238,0,0" VerticalAlignment="Top" Width="336" />
+        <Button x:Name="btn_AddAppointments" Content="Add" HorizontalAlignment="Left" Margin="671,211,0,0" VerticalAlignment="Top" Click="btn_AddAppointments_Click"/>
+        <Button x:Name="btn_EditAppointments" Content="Edit" HorizontalAlignment="Left" Margin="671,265,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

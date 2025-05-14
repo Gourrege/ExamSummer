@@ -20,9 +20,45 @@ namespace ExamSummer
     /// </summary>
     public partial class MainWindow : Window
     {
+        PatientData db = new PatientData();
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var patientQuery = from p in db.Patients
+                               orderby p.Surname
+                               select p;
+
+            lbx_ListofPatients.ItemsSource = patientQuery.ToList();
+
+        }
+
+        private void btn_AddPatient_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Patient newPatient = new Patient();
+            tbx_FirstName.Text = newPatient.FirstName;
+            tbx_Surname.Text = newPatient.Surname;
+            tbx_PhoneNumber.Text = newPatient.ContactNumber;
+            datepick_DOB.SelectedDate = newPatient.DOB;
+
+            db.Patients.Add(newPatient);
+
+            var newlistofpatients = from p in db.Patients
+                                    orderby p.Surname
+                                    select p;
+
+            lbx_ListofPatients.ItemsSource= newlistofpatients.ToList();
+        }
+
+        private void btn_AddAppointments_Click(object sender, RoutedEventArgs e)
+        {
+
+            AppointmentWindow addApointmentWindow = new AppointmentWindow();
+            addApointmentWindow.Show();
         }
     }
 }

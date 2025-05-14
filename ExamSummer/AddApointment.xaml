@@ -1,0 +1,22 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExamSummer"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="ExamSummer.AddApointment"
+        mc:Ignorable="d"
+        Title="AppointmentWindow" Height="450" Width="800" Loaded="" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Label Content="Appointment Date" HorizontalAlignment="Left" Margin="65,32,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="215,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.438,-0.248"/>
+        <Label Content="Appointment Time" HorizontalAlignment="Left" Margin="359,32,0,0" VerticalAlignment="Top"/>
+
+        <materialDesign:TimePicker HorizontalAlignment="Left" Margin="508,31,0,0" VerticalAlignment="Top"/>
+        <Label Content="Appointment Date" HorizontalAlignment="Left" Margin="54,70,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbx_Notes" HorizontalAlignment="Left" Margin="54,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="511" Height="284" Background="#00000000" BorderBrush="Black" BorderThickness="2" OpacityMask="Black"/>
+        <Button x:Name="btn_AddNewAppointment" Content="Add" HorizontalAlignment="Left" Margin="666,111,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_UpdateAppointment" Content="Update" HorizontalAlignment="Left" Margin="666,170,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
