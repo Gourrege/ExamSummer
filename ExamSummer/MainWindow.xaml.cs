@@ -20,7 +20,7 @@ namespace ExamSummer
     /// </summary>
     public partial class MainWindow : Window
     {
-        PatientData db = new PatientData();
+        PatientData db = new PatientData(); //Link to the Database
 
         public MainWindow()
         {
@@ -29,15 +29,15 @@ namespace ExamSummer
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var patientQuery = from p in db.Patients
+            var patientQuery = from p in db.Patients //fetch the patients from the data base
                                orderby p.Surname
                                select p;
 
-            lbx_ListofPatients.ItemsSource = patientQuery.ToList();
+            lbx_ListofPatients.ItemsSource = patientQuery.ToList(); //Adds to a list
 
         }
 
-        private void btn_AddPatient_MouseDown(object sender, MouseButtonEventArgs e)
+        private void btn_AddPatient_MouseDown(object sender, MouseButtonEventArgs e)  //Button Down to get inputted data
         {
             Patient newPatient = new Patient();
             tbx_FirstName.Text = newPatient.FirstName;
@@ -45,7 +45,7 @@ namespace ExamSummer
             tbx_PhoneNumber.Text = newPatient.ContactNumber;
             datepick_DOB.SelectedDate = newPatient.DOB;
 
-            db.Patients.Add(newPatient);
+            db.Patients.Add(newPatient); //Add to to list
 
             var newlistofpatients = from p in db.Patients
                                     orderby p.Surname
@@ -57,7 +57,9 @@ namespace ExamSummer
         private void btn_AddAppointments_Click(object sender, RoutedEventArgs e)
         {
 
-            AppointmentWindow addApointmentWindow = new AppointmentWindow();
+            AppointmentWindow addApointmentWindow = new AppointmentWindow(); //Open New Window 
+
+            // I couldnt create an event Handler, it gave me an error i took a screen shot
             addApointmentWindow.Show();
         }
     }

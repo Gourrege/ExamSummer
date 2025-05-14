@@ -13,7 +13,7 @@ namespace DatabaseManagement
 
         static void Main(string[] args)
         {
-            PatientData db = new PatientData();
+            PatientData db = new PatientData(); //creating the Database
 
             using (db) 
             {
@@ -48,7 +48,7 @@ namespace DatabaseManagement
 
                 Console.WriteLine("Patients Added to Database");
 
-                db.SaveChanges();
+                db.SaveChanges(); //Saves the database
 
                 Console.WriteLine("Database Saved");
             }

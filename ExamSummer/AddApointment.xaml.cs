@@ -19,7 +19,7 @@ namespace ExamSummer
     /// </summary>
     public partial class AppointmentWindow : MainWindow
     {
-        public AppointmentWindow()
+        public AppointmentWindow() // the new window
         {
             InitializeComponent();
         }
